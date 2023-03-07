@@ -7,9 +7,9 @@ const getAll = async () => {
 };
 
 const createCategory = async (name) => {
-    const categoryCreated = await Category.create({ name });
+    const categoryCreateds = await Category.create({ name });
 
-    return categoryCreated;
+    return categoryCreateds;
 };
 
 module.exports = {
