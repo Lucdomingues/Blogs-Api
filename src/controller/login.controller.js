@@ -1,5 +1,5 @@
 require('dotenv/config');
-const { jwtGenerator } = require('../utils/jwtGenerate');
+const { jwtGenerator } = require('../auth/authFunc');
 const userService = require('../service/user.service');
 
 const isBodyValid = (email, password) => email && password;
@@ -20,8 +20,8 @@ module.exports = async (req, res) => {
 
         const token = await jwtGenerator(req.body);
 
-       return res.status(200).json({ token });
+        return res.status(200).json({ token });
     } catch (err) {
-        return res.status(500).json({ message: 'Erro interno', error: err.message });
+        return res.status(500).json({ message: 'Erro interno' });
     }
 };

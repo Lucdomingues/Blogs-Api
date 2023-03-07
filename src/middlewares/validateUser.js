@@ -11,7 +11,7 @@ const validateName = (req, res, next) => {
 
     next();
 };
- 
+
 const validateEmail = async (req, res, next) => {
     const { email } = req.body;
 
@@ -30,7 +30,7 @@ const validateEmail = async (req, res, next) => {
         return res.status(409).json({
             message: 'User already registered',
         });
-     }
+    }
 
     next();
 };
