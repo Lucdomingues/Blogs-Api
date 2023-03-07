@@ -1,9 +1,8 @@
 const { jwtGenerator } = require('../auth/authFunc');
 const userService = require('../service/user.service');
+const { isBodyValid } = require('../utils/funcUtils');
 
-const isBodyValid = (displayName, email, password) => displayName && email && password;
-
-const getAll = async (req, res) => {
+const getAll = async (_req, res) => {
     try {
         const users = await userService.getAll();
 
@@ -12,6 +11,18 @@ const getAll = async (req, res) => {
         return res.status(500).json({ message: 'Erro interno' });
     }
 };
+
+const getById = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const userId = await userService.getById(id);
+        
+        return res.status(200).json(userId);
+    } catch (error) {
+        return res.status(404).json({ message: 'User does not exist' });
+    }
+ };
 
 const createUser = async (req, res) => {
     try {
@@ -33,5 +44,6 @@ const createUser = async (req, res) => {
 
 module.exports = {
     getAll,
+    getById,
     createUser,
 };

@@ -1,4 +1,5 @@
 const { User } = require('../models');
+const { passwordFactoring } = require('../utils/funcUtils');
 
 const getByEmail = async (email) => {
     const user = await User.findAll();
@@ -11,14 +12,18 @@ const getByEmail = async (email) => {
 const getAll = async () => {
     const users = await User.findAll();
 
-    const passwordFactoring = users.map((elements) => {
-        const user = elements;
-        delete user.dataValues.password;
-        return user;
-    });
+    const factoring = passwordFactoring(users);
 
-    return passwordFactoring;
- };
+    return factoring;
+};
+ 
+const getById = async (id) => {
+    const userId = await User.findByPk(id);
+
+    delete userId.dataValues.password;
+
+    return userId;
+};
 
 const createUser = async (displayName, email, password, image) => {
     await User.create({ displayName, email, password, image });
@@ -27,5 +32,6 @@ const createUser = async (displayName, email, password, image) => {
 module.exports = {
     getByEmail,
     getAll,
+    getById,
     createUser,
 };
