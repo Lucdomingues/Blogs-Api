@@ -1,8 +1,6 @@
 require('dotenv/config');
-const jwt = require('jsonwebtoken');
+const { jwtGenerator } = require('../utils/jwtGenerate');
 const userService = require('../service/user.service');
-
-const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
 const isBodyValid = (email, password) => email && password;
 
@@ -20,14 +18,9 @@ module.exports = async (req, res) => {
             return res.status(400).json({ message: 'Invalid fields' });
         }
 
-        const jwtConfig = {
-            expiresIn: '7d',
-            algorithm: 'HS256',
-        };
+        const token = await jwtGenerator(req.body);
 
-        const token = jwt.sign({ data: { userId: user.id } }, secret, jwtConfig);
-
-        res.status(200).json({ token });
+       return res.status(200).json({ token });
     } catch (err) {
         return res.status(500).json({ message: 'Erro interno', error: err.message });
     }

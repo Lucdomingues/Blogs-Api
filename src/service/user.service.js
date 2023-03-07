@@ -8,6 +8,11 @@ const getByEmail = async (email) => {
     return emailExist;
 };
 
+const createUser = async (displayName, email, password, image) => {
+     await User.create({ displayName, email, password, image });
+};
+
 module.exports = {
     getByEmail,
+    createUser,
 };
