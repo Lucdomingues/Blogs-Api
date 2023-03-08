@@ -8,7 +8,6 @@ const getAll = async (req, res) => {
 
         return res.status(200).json(posts);
     } catch (error) {
-        console.log(error.message);
         return res.status(500).json({ message: 'Erro interno' });
     }
 };
@@ -21,7 +20,7 @@ const createPost = async (req, res) => {
         const postCreated = await postService.createPost(id, title, content, categoryIds);
 
         return res.status(201).json(postCreated);
-    } catch (_error) {
+    } catch (error) {
         return res.status(400).json({ message: 'one or more "categoryIds" not found' });
     }
 };
