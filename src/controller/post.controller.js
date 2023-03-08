@@ -12,6 +12,22 @@ const getAll = async (req, res) => {
     }
 };
 
+const getById = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const postId = await postService.getById(id);
+
+        if (!postId) {
+            return res.status(404).json({ message: 'Post does not exist' });
+        }
+
+        return res.status(200).json(postId);
+    } catch (error) {
+        return res.status(404).json({ message: 'Post does not exist' });
+    }
+};
+
 const createPost = async (req, res) => {
     try {
         const { title, content, categoryIds } = req.body;
@@ -27,5 +43,6 @@ const createPost = async (req, res) => {
 
 module.exports = {
     getAll,
+    getById,
     createPost,
 };

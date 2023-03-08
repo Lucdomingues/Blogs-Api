@@ -5,6 +5,7 @@ const postController = require('../controller/post.controller');
 const route = express.Router();
 
 route.get('/', validateToken, postController.getAll);
+route.get('/:id', validateToken, postController.getById);
 route.post('/',
     validateToken,
     validatePost.validatePropertyRequired,
