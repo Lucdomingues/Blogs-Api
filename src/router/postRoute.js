@@ -10,5 +10,7 @@ route.post('/',
     validateToken,
     validatePost.validatePropertyRequired,
     postController.createPost);
+route.put('/:id',
+    validateToken, validatePost.validatePropertyPutRequired, postController.updatePost);
 
 module.exports = route;
