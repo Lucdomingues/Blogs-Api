@@ -11,5 +11,8 @@ route.post('/',
     validateUser.validateEmail,
     validateUser.validatePassword,
     userController.createUser);
+route.delete('/me',
+    validateToken,
+    userController.deleteUser);
 
 module.exports = route;

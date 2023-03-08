@@ -11,6 +11,13 @@ route.post('/',
     validatePost.validatePropertyRequired,
     postController.createPost);
 route.put('/:id',
-    validateToken, validatePost.validatePropertyPutRequired, postController.updatePost);
+    validateToken,
+    validatePost.validateUserAuthorized,
+    validatePost.validatePropertyPutRequired,
+    postController.updatePost);
+route.delete('/:id',
+    validateToken,
+    validatePost.validateUserAuthorized,
+    postController.deletePost);
 
 module.exports = route;
