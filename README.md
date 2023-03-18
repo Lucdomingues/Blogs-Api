@@ -30,10 +30,10 @@
     <img src="https://github.com/othneildrew/Best-README-Template/raw/master/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Frontend-Online-Store</h3>
+<h3 align="center">Blogs-Api</h3>
 
   <p align="center">
-    Projeto com base em uma aplicação de uma loja de compras online
+    Projeto com base em uma aplicação de um blog
     <br />
   </p>
 </div>
@@ -66,13 +66,15 @@
 <!-- SOBRE O PROJETO -->
 ## Sobre o projeto
 
-  Neste projeto foi criado uma versão simplificada, sem persistência no banco de dados, de uma **loja online**, desenvolvido em grupo utilizando métodos como **Scrum**, **Pair Programming**, **Kanban** com auxílio de **DM's(Daily's Meeting)**, em um cenário próximo ao do mercado de trabalho.
-  
-  A partir de algumas demandas, temos uma aplicação em que pessoas usuárias podem:
-  - Buscar produtos por termos e categorias a partir da _API do Mercado Livre_;
-  - Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
-  - Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações e;
-  - Simular a finalização da compra dos itens selecionados.
+ Neste projeto foi desenvolvido uma API e um banco de dados para a produção de conteúdo para um blog!
+
+Essa aplicação foi desenvolvida em Node.js usando o pacote sequelize para fazer um CRUD de posts.
+
+Utilizando endpoints que estarão conectados ao banco de dados seguindo os princípios do REST;
+
+Para fazer um post é necessário usuário e login;
+
+Será necessária a utilização de categorias para os posts.
 
 
 <p align="right">(<a href="#readme-top">de volta para o topo</a>)</p>
@@ -80,12 +82,12 @@
 
 
 ### Construído com
-* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="react" width="50" height="50"/>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="docker" width="50" height="50"/>
 * <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="java-script" width="50" height="50"/>
-* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain-wordmark.svg" alt="css" width="50" height="50"/>
-* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain-wordmark.svg" alt="html" width="50" height="50"/>
-* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="50" height="50"/>
-* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="figma" width="50" height="50"/>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" alt="node" width="50" height="50"/>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" alt="sequelize" width="50" height="50"/>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="express" width="50" height="50"/>
+* <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="50" height="50"/>
 * <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" alt="git" width="50" height="50"/>
 <p align="right">(<a href="#readme-top">de volta para o topo</a>)</p>
 
@@ -166,8 +168,8 @@ LINKEDIN - [https://www.linkedin.com/in/lucas-domingues-developer/](https://www.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Lucdomingues/Frontend-Online-Store.svg?style=for-the-badge
-[contributors-url]: https://github.com/Lucdomingues/Frontend-Online-Store/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/Lucdomingues/Blogs-Api.svg?style=for-the-badge
+[contributors-url]: https://github.com/Lucdomingues/Blogs-Api/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/lucas-domingues-developer/
 [product-screenshot]: images/screenshot.png
